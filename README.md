@@ -1,0 +1,1 @@
+BetterRA or Better RemoteAdmin is a SCP:Secret Lab plugin based on pure LabApi to implement a new and reformed RemoteAdmin interface, with more additions for server hosters to be able to do as they please.
