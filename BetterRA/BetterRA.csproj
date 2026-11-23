@@ -35,6 +35,7 @@
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Config.cs"/>
+        <Compile Include="Display\Init.cs"/>
         <Compile Include="Events.cs"/>
         <Compile Include="Keybinds.cs"/>
         <Compile Include="Plugin.cs"/>
@@ -62,6 +63,9 @@
         <Reference Include="Mirror">
             <HintPath>..\..\..\..\Games\steamgames\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Mirror.dll</HintPath>
         </Reference>
+        <Reference Include="NorthwoodLib">
+            <HintPath>..\..\..\..\Games\steamgames\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\NorthwoodLib.dll</HintPath>
+        </Reference>
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
         <Reference Include="UnityEngine">
@@ -72,6 +76,12 @@
         </Reference>
         <Reference Include="UnityEngine.PhysicsModule">
             <HintPath>..\..\..\..\Games\steamgames\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextRenderingModule">
+            <HintPath>..\..\..\..\Games\steamgames\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIElementsModule">
+            <HintPath>..\..\..\..\Games\steamgames\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
         </Reference>
         <Reference Include="YamlDotNet, Version=18.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
             <HintPath>..\packages\YamlDotNet.18.1.0\lib\net47\YamlDotNet.dll</HintPath>

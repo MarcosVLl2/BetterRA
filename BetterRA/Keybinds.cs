@@ -8,24 +8,24 @@ namespace BetterRA
 {
     public class Keybinds
     {
-        private static readonly SSGroupHeader SettingHeader = new((int)SettingsDictionary.SettingsEnum.Header,
-            "BetterRA", true, "BetterRA Keybinds, available only to server moderators");
-
-        // ReSharper disable once InconsistentNaming
-        private static readonly SSKeybindSetting SettingOpenRA = new((int)SettingsDictionary.SettingsEnum.OpenRA,
-            "Open BetterRA", KeyCode.J, false, true,
-            "Open Better RemoteAdmin panel");
+        public enum SettingsEnum
+        {
+            Header = 8220,
+            OpenRA = 8221,
+        }
 
         public static readonly ServerSpecificSettingBase[] SettingBase =
         [
-            SettingHeader, SettingOpenRA
+            new SSGroupHeader((int)SettingsEnum.Header,
+                "BetterRA", true, "BetterRA Keybinds, available only to server moderators"),
+            new SSKeybindSetting((int)SettingsEnum.OpenRA,
+                "Open BetterRA", KeyCode.J, false, true, "Open Better RemoteAdmin panel")
         ];
 
 
         public static void OnValueReceived(ReferenceHub hub, ServerSpecificSettingBase setting)
         {
             var player = Player.Get(hub);
-
             try
             {
                 Handle(player, hub, setting);
@@ -40,23 +40,14 @@ namespace BetterRA
         {
             switch (setting.SettingId)
             {
-                case (int)SettingsDictionary.SettingsEnum.Header:
+                case (int)SettingsEnum.Header:
                     break;
-                case (int)SettingsDictionary.SettingsEnum.OpenRA:
+                case (int)SettingsEnum.OpenRA:
                     if (setting.DebugValue == "Released")
                     {
                     }
 
                     break;
-            }
-        }
-
-        private class SettingsDictionary
-        {
-            public enum SettingsEnum
-            {
-                Header = 8220,
-                OpenRA = 8221,
             }
         }
     }
